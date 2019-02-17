@@ -1,16 +1,57 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      ¡Hagamos vaca!
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
+<!-- 
+<ion-button color="dark" (click)="loadUser()">Generar</ion-button>
 <ion-content>
-    <ion-button color="secondary" expand="block">Ejemplo 1</ion-button>
-    <ion-button shape="round" fill="outline">Ejemplo 2</ion-button>
-    <ion-button>
-        <ion-icon slot="start" name="star"></ion-icon>
-        Prueba 3
-      </ion-button>
+  <ion-list>
+    <ion-item *ngFor="let user of users">
+      <ion-avatar item-start>
+        <img [src]="user.picture.medium">
+      </ion-avatar>
+      <h2>{{ user.name.first | uppercase }}</h2>
+      <p>{{ user.email }}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>
+ -->
+ <ion-header>
+    <ion-toolbar>
+
+      <ion-title>Planes</ion-title>
+    </ion-toolbar>
+  
+  </ion-header>
+
+  <ion-grid>
+        <ion-row>
+             
+              <ion-card>
+                <ion-item>
+                  <ion-icon name="home" slot="start"></ion-icon>
+                  <ion-label>Plan familiar</ion-label>
+                  <ion-button fill="outline" slot="end">Crear</ion-button>
+                </ion-item>
+              
+                <ion-card-content>
+                  Arma tu plan familiar, planea una fecha y hora, define a quienes invitarás y define un lugar
+                </ion-card-content>
+              </ion-card>
+            
+         </ion-row>
+         <ion-row>
+              <ion-card>
+                  <ion-item>
+                    <ion-icon name="beer" slot="start"></ion-icon>
+                    <ion-label>Arma tu vaca</ion-label>
+                    <ion-button fill="outline" slot="end">Crear</ion-button>
+                  </ion-item>
+                
+                  <ion-card-content>
+                  Invita a tus amigos o conocidos y proponles armar una vaca, define un valor a aportar, fecha y hora y
+                  y el lugar en el cual se encontrarán
+                  </ion-card-content>
+                </ion-card>
+         </ion-row>
+         
+   </ion-grid>
+
+
