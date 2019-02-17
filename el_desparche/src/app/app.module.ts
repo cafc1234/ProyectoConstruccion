@@ -12,12 +12,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { UserServiceService } from './services/user-service.service';
 import { ModalFamiliarPage } from './modal-familiar/modal-familiar.page';
+import { ModalVacaPage } from './modal-vaca/modal-vaca.page';
+
 
 
 
 @NgModule({
-  declarations: [AppComponent,ModalFamiliarPage],
-  entryComponents: [ModalFamiliarPage],
+  declarations: [AppComponent,ModalFamiliarPage,ModalVacaPage],
+  entryComponents: [ModalFamiliarPage,ModalVacaPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
   providers: [
     StatusBar,

@@ -1,18 +1,4 @@
 
-<!-- 
-<ion-button color="dark" (click)="loadUser()">Generar</ion-button>
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let user of users">
-      <ion-avatar item-start>
-        <img [src]="user.picture.medium">
-      </ion-avatar>
-      <h2>{{ user.name.first | uppercase }}</h2>
-      <p>{{ user.email }}</p>
-    </ion-item>
-  </ion-list>
-</ion-content>
- -->
  <ion-header>
     <ion-toolbar>
 
@@ -42,7 +28,7 @@
                   <ion-item>
                     <ion-icon name="beer" slot="start"></ion-icon>
                     <ion-label>Arma tu vaca</ion-label>
-                    <ion-button fill="outline" slot="end">Crear</ion-button>
+                    <ion-button fill="outline" slot="end" (click)="presentModalVaca()">Crear</ion-button>
                   </ion-item>
                 
                   <ion-card-content>

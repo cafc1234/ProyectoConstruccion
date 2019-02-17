@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// Se importa el servicio
+import { UserServiceService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-modal-familiar',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalFamiliarPage implements OnInit {
 
-  constructor() { }
-
+  constructor(public userService: UserServiceService) { }
+  //Se define una variable array de tipo any
+  users: any[] = [];
+  //Al cargar trae un servicio 
   ngOnInit() {
+    this.userService.getUsers().subscribe(
+      (data) => { // Success
+      this.users = data['results'];
+      },
+      (error) =>{
+      console.error(error);
+      }
+      )
   }
 
 }
