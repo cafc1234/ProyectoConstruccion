@@ -11,12 +11,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { UserServiceService } from './services/user-service.service';
+import { ModalFamiliarPage } from './modal-familiar/modal-familiar.page';
 
 
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent,ModalFamiliarPage],
+  entryComponents: [ModalFamiliarPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
   providers: [
     StatusBar,
