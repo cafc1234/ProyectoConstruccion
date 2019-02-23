@@ -14,12 +14,16 @@ import { UserServiceService } from './services/user-service.service';
 import { ModalFamiliarPage } from './modal-familiar/modal-familiar.page';
 import { ModalVacaPage } from './modal-vaca/modal-vaca.page';
 
+import { ModalAlmacenPage } from './modal-almacen/modal-almacen.page';
+import { ModalTiendaPage } from './modal-tienda/modal-tienda.page';
+import { ModalBarPage } from './modal-bar/modal-bar.page';
+import { ModalDiscoPage } from './modal-disco/modal-disco.page';
 
 
 
 @NgModule({
-  declarations: [AppComponent,ModalFamiliarPage,ModalVacaPage],
-  entryComponents: [ModalFamiliarPage,ModalVacaPage],
+  declarations: [AppComponent,ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage],
+  entryComponents: [ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
   providers: [
     StatusBar,
