@@ -4,6 +4,7 @@ import { UserServiceService } from '../services/user-service.service';
 
 import { NavController,ModalController } from '@ionic/angular';
 
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-modal-vaca',
@@ -12,7 +13,7 @@ import { NavController,ModalController } from '@ionic/angular';
 })
 export class ModalVacaPage implements OnInit {
 
-  constructor(public userService: UserServiceService,private nav:NavController,private modalCtrl:ModalController) { 
+  constructor(public userService: UserServiceService,private nav:NavController,private modalCtrl:ModalController,public alertController: AlertController) { 
 
   }
 
@@ -34,4 +35,29 @@ closeModal()
 {
   this.modalCtrl.dismiss();
 }
+
+async presentAlertConfirm(nombre) {
+  const alert = await this.alertController.create({
+    header: 'Confirmación',
+    message: '¿Deseas enviar la invitación a '+nombre+' ?',
+    buttons: [
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {
+          console.log('Confirm Cancel: blah');
+        }
+      }, {
+        text: 'Aceptar',
+        handler: () => {
+          console.log('Confirm Okay');
+        }
+      }
+    ]
+  });
+
+  await alert.present();
+}
+
 }
