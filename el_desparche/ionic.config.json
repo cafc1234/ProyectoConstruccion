@@ -1,6 +1,8 @@
 {
   "name": "el_desparche",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "ee2c6ac7"
 }

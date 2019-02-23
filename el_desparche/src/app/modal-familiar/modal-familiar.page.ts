@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 // Se importa el servicio
 import { UserServiceService } from '../services/user-service.service';
 
+import { NavController,ModalController } from '@ionic/angular';
+
+
 @Component({
   selector: 'app-modal-familiar',
   templateUrl: './modal-familiar.page.html',
@@ -9,7 +12,7 @@ import { UserServiceService } from '../services/user-service.service';
 })
 export class ModalFamiliarPage implements OnInit {
 
-  constructor(public userService: UserServiceService) { }
+  constructor(public userService: UserServiceService,private nav:NavController,private modalCtrl:ModalController) { }
   //Se define una variable array de tipo any
   users: any[] = [];
   //Al cargar trae un servicio 
@@ -22,6 +25,11 @@ export class ModalFamiliarPage implements OnInit {
       console.error(error);
       }
       )
+  }
+
+  closeModal()
+  {
+    this.modalCtrl.dismiss();
   }
 
 }

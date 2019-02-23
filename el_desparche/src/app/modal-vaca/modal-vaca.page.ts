@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+// Se importa el servicio
+import { UserServiceService } from '../services/user-service.service';
+
+import { NavController,ModalController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-modal-vaca',
@@ -7,9 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalVacaPage implements OnInit {
 
-  constructor() { }
+  constructor(public userService: UserServiceService,private nav:NavController,private modalCtrl:ModalController) { 
 
-  ngOnInit() {
   }
 
+  //Se define una variable array de tipo any
+  users: any[] = [];
+  //Al cargar trae un servicio 
+  ngOnInit() {
+    this.userService.getUsers().subscribe(
+      (data) => { // Success
+      this.users = data['results'];
+      },
+      (error) =>{
+      console.error(error);
+      }
+      )
+}
+
+closeModal()
+{
+  this.modalCtrl.dismiss();
+}
 }

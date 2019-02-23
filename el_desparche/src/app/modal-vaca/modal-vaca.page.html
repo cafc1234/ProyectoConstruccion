@@ -1,9 +1,31 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Arma tu vaca</ion-title>
+    <ion-button color="light" slot="end" (click)="closeModal()" size="small"><ion-icon slot="icon-only" name="close"></ion-icon>
+   </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-item>
+        <ion-label position="floating">Defina el valor de la vaca</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
 
+      <ion-list>
+          <ion-item *ngFor="let user of users">
+            <ion-avatar item-start>
+              <img [src]="user.picture.medium">
+            </ion-avatar>
+            <h2>{{ user.name.first | uppercase }}</h2>
+            <ion-button slot="end" >
+              
+                <ion-icon slot="icon-only" name="mail"></ion-icon>
+              </ion-button>
+            
+          </ion-item>
+    
+        </ion-list>
+
+      
 </ion-content>
