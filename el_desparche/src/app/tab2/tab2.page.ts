@@ -3,7 +3,7 @@ import { ToastController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { ModalFamiliarPage } from '../modal-familiar/modal-familiar.page';
 import { ModalVacaPage } from '../modal-vaca/modal-vaca.page';
-
+import { ModalEventoPage } from '../modal-evento/modal-evento.page';
 
 
 @Component({
@@ -27,6 +27,14 @@ export class Tab2Page {
   async presentModalVaca() {
     const modal = await this.modalController.create({
       component: ModalVacaPage,
+      componentProps: { value: 123 }
+    });
+    return await modal.present();
+  }
+
+  async presentModalEvento() {
+    const modal = await this.modalController.create({
+      component: ModalEventoPage,
       componentProps: { value: 123 }
     });
     return await modal.present();

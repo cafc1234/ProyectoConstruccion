@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserServiceService } from './services/user-service.service';
 import { ModalFamiliarPage } from './modal-familiar/modal-familiar.page';
 import { ModalVacaPage } from './modal-vaca/modal-vaca.page';
+import { ModalEventoPage } from './modal-evento/modal-evento.page';
 
 
 import { ModalAlmacenPage } from './modal-almacen/modal-almacen.page';
@@ -24,8 +25,8 @@ import { ModalDiscoPage } from './modal-disco/modal-disco.page';
 
 @NgModule({
 
-  declarations: [AppComponent,ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage],
-  entryComponents: [ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage],
+  declarations: [AppComponent,ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage,ModalEventoPage],
+  entryComponents: [ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage,ModalEventoPage],
 
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
   providers: [
