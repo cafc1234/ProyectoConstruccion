@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NavController,ModalController } from '@ionic/angular';
+
+
+
+
 @Component({
   selector: 'app-modal-almacen',
   templateUrl: './modal-almacen.page.html',
@@ -7,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalAlmacenPage implements OnInit {
 
-  constructor() { }
+  constructor(private nav:NavController,private modalCtrl:ModalController) { }
 
   ngOnInit() {
   }
 
+
+  closeModal()
+  {
+    this.modalCtrl.dismiss();
+  }
+
 }
+
