@@ -21,6 +21,7 @@ import { ModalTiendaPage } from './modal-tienda/modal-tienda.page';
 import { ModalBarPage } from './modal-bar/modal-bar.page';
 import { ModalDiscoPage } from './modal-disco/modal-disco.page';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ModalDiscoPage } from './modal-disco/modal-disco.page';
     StatusBar,
     UserServiceService,
     SplashScreen,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
