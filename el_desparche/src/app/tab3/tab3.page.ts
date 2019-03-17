@@ -39,7 +39,7 @@ export class Tab3Page {
     let latlng = new LatLng(position.coords.latitude, position.coords.longitude);
 
     map.one(GoogleMapsEvent.MAP_READY).then(() => {
-      let position: CameraPosition = {
+      let position: CameraPosition<LatLng> = {
         target: latlng,
         zoom: 20,
         tilt: 30
