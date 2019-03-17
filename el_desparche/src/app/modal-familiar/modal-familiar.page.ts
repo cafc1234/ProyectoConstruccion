@@ -18,7 +18,8 @@ export class ModalFamiliarPage implements OnInit {
   constructor(public userService: UserServiceService,private nav:NavController,private modalCtrl:ModalController,public alertController: AlertController) { }
   //Se define una variable array de tipo any
   users: any[] = [];
-  //Al cargar trae un servicio 
+  //Al cargar trae un servicio
+
   ngOnInit() {
     this.userService.getUsers().subscribe(
       (data) => { // Success
@@ -35,7 +36,8 @@ export class ModalFamiliarPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  async presentAlertConfirm(nombre) {
+
+  async presentAlertConfirm(nombre,identificador) {
     const alert = await this.alertController.create({
       header: 'Confirmación',
       message: '¿Deseas enviar la invitación a '+nombre+' ?',
@@ -50,7 +52,7 @@ export class ModalFamiliarPage implements OnInit {
         }, {
           text: 'Aceptar',
           handler: () => {
-            console.log('Confirm Okay');
+            document.getElementById(identificador).disabled = true;
           }
         }
       ]
