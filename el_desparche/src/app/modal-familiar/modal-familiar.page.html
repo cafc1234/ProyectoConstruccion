@@ -13,7 +13,7 @@
               <img [src]="user.picture.medium">
             </ion-avatar>
             <h2>{{ user.name.first | uppercase }}</h2>
-            <ion-button id="{{identificador}}" slot="end" (click)="presentAlertConfirm(user.name.first,identificador)" [disabled]="buttonDisable">
+            <ion-button slot="end" (click)="presentAlertConfirm(user.name.first,identificador)" [disabled]="buttonDisable">
               
                 <ion-icon slot="icon-only" name="mail"></ion-icon>
               </ion-button>

@@ -52,7 +52,6 @@ export class ModalFamiliarPage implements OnInit {
         }, {
           text: 'Aceptar',
           handler: () => {
-            document.getElementById(identificador).disabled = true;
           }
         }
       ]

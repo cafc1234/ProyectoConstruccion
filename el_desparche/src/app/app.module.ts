@@ -22,7 +22,9 @@ import { ModalBarPage } from './modal-bar/modal-bar.page';
 import { ModalDiscoPage } from './modal-disco/modal-disco.page';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import{ GoogleMaps } from '@ionic-native/google-maps'
+import{ GoogleMaps } from '@ionic-native/google-maps';
+
+
 
 
 @NgModule({
@@ -37,7 +39,7 @@ import{ GoogleMaps } from '@ionic-native/google-maps'
     SplashScreen,
     Geolocation,
     GoogleMaps,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })
