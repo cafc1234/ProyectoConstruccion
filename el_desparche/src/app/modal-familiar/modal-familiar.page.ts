@@ -18,6 +18,8 @@ export class ModalFamiliarPage implements OnInit {
   constructor(public userService: UserServiceService,private nav:NavController,private modalCtrl:ModalController,public alertController: AlertController) { }
   //Se define una variable array de tipo any
   users: any[] = [];
+
+  buttonDisable: boolean[] = [];
   //Al cargar trae un servicio
 
   ngOnInit() {
@@ -52,7 +54,7 @@ export class ModalFamiliarPage implements OnInit {
         }, {
           text: 'Aceptar',
           handler: () => {
-            document.getElementById(identificador).disabled = true;
+            this.buttonDisable[identificador]=true;
           }
         }
       ]
