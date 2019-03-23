@@ -6,7 +6,7 @@ import { ModalController } from '@ionic/angular';
 import { ModalAlmacenPage } from '../modal-almacen/modal-almacen.page';
 import { ModalTiendaPage } from '../modal-tienda/modal-tienda.page';
 import { ModalBarPage } from '../modal-bar/modal-bar.page';
-import { ModalDiscoPage } from '../modal-disco/modal-disco.page';
+import { ModalDiscoPage } from '../modal-disco/modal-disco.page'; 
 
 @Component({
   selector: 'app-tab1',

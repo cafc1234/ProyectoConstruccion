@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'modal-bar', loadChildren: './modal-bar/modal-bar.module#ModalBarPageModule' },
   { path: 'modal-disco', loadChildren: './modal-disco/modal-disco.module#ModalDiscoPageModule' },
   { path: 'modal-evento', loadChildren: './modal-evento/modal-evento.module#ModalEventoPageModule' },
+  { path: 'modal-localidad', loadChildren: './modal-evento/modal-localidad.module#ModalLocalidadPageModule' },
   { path: 'registro', loadChildren: './registro/registro.module#RegistroPageModule' }
 
 
