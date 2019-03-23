@@ -23,13 +23,16 @@ import { ModalDiscoPage } from './modal-disco/modal-disco.page';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
+import { IonicStorageModule } from '@ionic/storage';
+
+
 
 @NgModule({
 
   declarations: [AppComponent,ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage,ModalEventoPage],
   entryComponents: [ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage,ModalEventoPage],
 
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     UserServiceService,
