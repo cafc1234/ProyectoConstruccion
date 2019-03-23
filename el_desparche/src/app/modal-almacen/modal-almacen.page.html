@@ -1,8 +1,11 @@
 <ion-header>
   <ion-toolbar>
+      <ion-buttons slot="end">
+          <ion-button  slot="end" (click)="closeModal()"><ion-icon slot="icon-only" name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
     <ion-title>Almacenes de cadena</ion-title>
-    <ion-button color="light" slot="end" (click)="closeModal()" size="small"><ion-icon slot="icon-only" name="close"></ion-icon>
-    </ion-button>
+
   </ion-toolbar>
 </ion-header>
 

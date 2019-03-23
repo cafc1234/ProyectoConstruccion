@@ -19,6 +19,7 @@ export class ModalVacaPage implements OnInit {
 
   //Se define una variable array de tipo any
   users: any[] = [];
+  buttonDisable: boolean[] = [];
   //Al cargar trae un servicio 
   ngOnInit() {
     this.userService.getUsers().subscribe(
@@ -36,7 +37,7 @@ closeModal()
   this.modalCtrl.dismiss();
 }
 
-async presentAlertConfirm(nombre) {
+async presentAlertConfirm(nombre,identificador) {
   const alert = await this.alertController.create({
     header: 'Confirmación',
     message: '¿Deseas enviar la invitación a '+nombre+' ?',
@@ -51,7 +52,7 @@ async presentAlertConfirm(nombre) {
       }, {
         text: 'Aceptar',
         handler: () => {
-          console.log('Confirm Okay');
+          this.buttonDisable[identificador]=true;
         }
       }
     ]

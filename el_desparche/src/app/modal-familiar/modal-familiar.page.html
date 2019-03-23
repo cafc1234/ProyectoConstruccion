@@ -1,8 +1,11 @@
 <ion-header>
   <ion-toolbar>
+      <ion-buttons slot="end">
+          <ion-button  slot="end" (click)="closeModal()"><ion-icon slot="icon-only" name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
     <ion-title>Plan Familiar</ion-title>
-    <ion-button color="light" slot="end" (click)="closeModal()" size="small"><ion-icon slot="icon-only" name="close"></ion-icon>
-    </ion-button>
+
   </ion-toolbar>
 </ion-header>
 
@@ -14,10 +17,10 @@
             </ion-avatar>
             <h2>{{ user.name.first | uppercase }}</h2>
             <ion-button  slot="end" (click)="presentAlertConfirm(user.name.first,identificador)" [disabled]="buttonDisable[identificador]">
-              
+
                 <ion-icon slot="icon-only" name="mail"></ion-icon>
               </ion-button>
-            
+
           </ion-item>
         </ion-list>
 </ion-content>
