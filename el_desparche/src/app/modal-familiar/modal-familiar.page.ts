@@ -18,6 +18,7 @@ export class ModalFamiliarPage implements OnInit {
   constructor(public userService: UserServiceService,private nav:NavController,private modalCtrl:ModalController,public alertController: AlertController) { }
   //Se define una variable array de tipo any
   users: any[] = [];
+  amigos: any[]=[];
 
   buttonDisable: boolean[] = [];
   //Al cargar trae un servicio
@@ -38,6 +39,10 @@ export class ModalFamiliarPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
+  continuar(){
+    this.confirmarInvitados();
+  }
+
 
   async presentAlertConfirm(nombre,identificador) {
     const alert = await this.alertController.create({
@@ -55,6 +60,7 @@ export class ModalFamiliarPage implements OnInit {
           text: 'Aceptar',
           handler: () => {
             this.buttonDisable[identificador]=true;
+            this.amigos.push(nombre);
           }
         }
       ]
@@ -62,5 +68,31 @@ export class ModalFamiliarPage implements OnInit {
 
     await alert.present();
   }
+
+
+  async confirmarInvitados() {
+    const alert = await this.alertController.create({
+      header: 'Confirmación',
+      message: '¿Deseas enviar la invitación a '+this.amigos.length+' personas ?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Aceptar',
+          handler: () => {
+           console.log(this.amigos);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
 
 }

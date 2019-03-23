@@ -46,6 +46,7 @@ export class RegistroPage implements OnInit {
        this.usuario.email=="" || this.usuario.usuario=="" || this.usuario.clave==""){
         this.toastError();
        }else{
+        this.storage.clear();
         this.guardarStorage(function(){
           window.location.href = "";
 

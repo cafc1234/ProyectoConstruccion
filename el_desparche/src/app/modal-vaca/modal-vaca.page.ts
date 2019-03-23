@@ -20,6 +20,8 @@ export class ModalVacaPage implements OnInit {
   //Se define una variable array de tipo any
   users: any[] = [];
   buttonDisable: boolean[] = [];
+  amigos: any[]=[];
+  vaca={'valor':0};
   //Al cargar trae un servicio 
   ngOnInit() {
     this.userService.getUsers().subscribe(
@@ -30,7 +32,13 @@ export class ModalVacaPage implements OnInit {
       console.error(error);
       }
       )
+
+    }
+
+ continuar(){
+      this.confirmarInvitados();
 }
+
 
 closeModal()
 {
@@ -53,6 +61,35 @@ async presentAlertConfirm(nombre,identificador) {
         text: 'Aceptar',
         handler: () => {
           this.buttonDisable[identificador]=true;
+          this.amigos.push(nombre);
+        }
+      }
+    ]
+  });
+
+  await alert.present();
+}
+
+async confirmarInvitados() {
+  const alert = await this.alertController.create({
+    header: 'Confirmación',
+    message: '¿Deseas enviar la invitación a '+this.amigos.length+' personas ?',
+    buttons: [
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: (blah) => {
+          console.log('Confirm Cancel: blah');
+        }
+      }, {
+        text: 'Aceptar',
+        handler: () => {
+          if(this.vaca.valor!==null || this.vaca.valor>0){
+            console.log('es valido');
+          } else{
+            console.log('no es valido');
+          }
         }
       }
     ]
