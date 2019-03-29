@@ -1,22 +1,21 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalLocalidadPage } from './modal-localidad.page';
+import { LocalidadPage } from './localidad.page';
 
-describe('ModalLocalidadPage', () => {
-  let component: ModalLocalidadPage;
-  let fixture: ComponentFixture<ModalLocalidadPage>;
+describe('Tab1Page', () => {
+  let component: LocalidadPage;
+  let fixture: ComponentFixture<LocalidadPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalLocalidadPage ],
+      declarations: [LocalidadPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalLocalidadPage);
+    fixture = TestBed.createComponent(LocalidadPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
