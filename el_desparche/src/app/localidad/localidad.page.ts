@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { UserServiceService } from '../services/user-service.service';
+import { ModalController } from '@ionic/angular';
+import { ModalTiendaPage } from '../modal-tienda/modal-tienda.page';
 
 @Component({
   selector: 'app-localidad',
@@ -8,9 +11,21 @@ import { Component } from '@angular/core';
 })
 
   export class LocalidadPage {
+    constructor(public userService: UserServiceService,public modalController: ModalController){
+  
+    }
+    
+    async presentModalTienda() {
 
+      const modal = await this.modalController.create({
+        component: ModalTiendaPage,
+        componentProps: { value: 123 }
+      });
+      return await modal.present();
+    }
 
   }
+  
 
  
 

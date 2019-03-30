@@ -21,5 +21,6 @@ export class ModalTiendaPage implements OnInit {
 
   closeModal() {
   this.modalCtrl.dismiss();
+  window.location.href = "nav";
   }
 }
