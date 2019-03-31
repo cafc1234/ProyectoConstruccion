@@ -36,7 +36,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],
   tosUrl: '/terminos',
   privacyPolicyUrl: '/terminos',
-  credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM
+  credentialHelper: firebaseui.auth.CredentialHelper.NONE
 };
 
 

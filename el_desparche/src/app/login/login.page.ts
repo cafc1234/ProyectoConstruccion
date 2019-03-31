@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { ToastController } from '@ionic/angular';
 import { Validators } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Validators } from '@angular/forms';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private storage: Storage, public toastController: ToastController) { }
+  constructor(private storage: Storage, public toastController: ToastController, public afAuth: AngularFireAuth) { }
 
   inicio = {
     'usuario': "",
@@ -21,6 +22,10 @@ export class LoginPage implements OnInit {
   ngOnInit() {
      
   }
+
+  successCallback(signInSuccessData: FirebaseUISignInSuccessWithAuthResult) {
+    ...
+}
 
   async toastError() {
     const toast = await this.toastController.create({

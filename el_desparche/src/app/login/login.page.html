@@ -6,31 +6,10 @@
 
 <ion-content padding>
  
-<ion-grid>
-  <ion-row>
-    <ion-col>
-        <ion-item>
-            <ion-label position="floating"></ion-label>
-            <ion-input type="text" placeholder="Usuario" [(ngModel)]="inicio.usuario" required></ion-input>
-          </ion-item>
-          
-          <ion-item>
-            <ion-label position="floating"></ion-label>
-            <ion-input type="password" placeholder="Clave" [(ngModel)]="inicio.clave" required></ion-input>
-          </ion-item>
-    </ion-col>
-
-  </ion-row>
-  <ion-row>
-    <ion-col>
-        <ion-button color="light" (click)="confirmarIngreso()" expand="block">Iniciar sesión</ion-button>
-        <ion-button color="success" href="registro" expand="block">Registrarse</ion-button>
-
-    </ion-col>
-   
-  </ion-row>
-</ion-grid>
-<firebase-ui></firebase-ui>
+<firebase-ui>
+  (signInSuccessWithAuthResult)="successCallback($event)"
+  (signInFailure)="errorCallback($event)">
+</firebase-ui>
 
 
 
