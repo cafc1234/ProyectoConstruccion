@@ -24,6 +24,20 @@ import { ModalDiscoPage } from './modal-disco/modal-disco.page';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 import { IonicStorageModule } from '@ionic/storage';
+import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import { environment } from 'src/environments/environment';
+
+const firebaseUiAuthConfig: firebaseui.auth.Config = {
+  signInFlow: 'popup',
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+  ],
+  tosUrl: '/terminos',
+  privacyPolicyUrl: '/terminos',
+  credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM
+};
 
 
 
@@ -32,7 +46,10 @@ import { IonicStorageModule } from '@ionic/storage';
   declarations: [AppComponent,ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage,ModalEventoPage],
   entryComponents: [ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage,ModalEventoPage],
 
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),],
   providers: [
     StatusBar,
     UserServiceService,
