@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        window.location.href = "nav";
+        window.location.href = "/nav";
       }
     }); 
   }
