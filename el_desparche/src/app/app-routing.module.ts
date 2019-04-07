@@ -13,7 +13,9 @@ const routes: Routes = [
   { path: 'modal-disco', loadChildren: './modal-disco/modal-disco.module#ModalDiscoPageModule' },
   { path: 'modal-evento', loadChildren: './modal-evento/modal-evento.module#ModalEventoPageModule' },
   { path: 'registro', loadChildren: './registro/registro.module#RegistroPageModule' },
-  { path: 'loc', loadChildren: './localidad/localidad.module#LocalidadPageModule' },  { path: 'terminos', loadChildren: './terminos/terminos.module#TerminosPageModule' }
+  { path: 'loc', loadChildren: './localidad/localidad.module#LocalidadPageModule' },
+  { path: 'terminos', loadChildren: './terminos/terminos.module#TerminosPageModule' },
+  { path: 'tienda-ejemplo', loadChildren: './tienda-ejemplo/tienda-ejemplo.module#TiendaEjemploPageModule' }
 
 
 
