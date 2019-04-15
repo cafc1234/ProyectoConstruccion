@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform,MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+import { Router,RouterEvent, NavigationEnd  } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,31 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     public afAuth: AngularFireAuth,
-    private router: Router
+    private router: Router,
+    private menuCtrl: MenuController
   ) {
     this.initializeApp();
   }
+
+  pages = [
+    {
+      title: 'Login',
+      url: '/login',
+      icon: 'log-in'
+    },
+    {
+      title: 'Contact',
+      url: '/tabs/contact',
+      icon: 'person'
+    },
+    {
+      title: 'terminos',
+      url: '/terminos',
+      icon: 'information-circle'
+    }
+  ];
+
+
 
   initializeApp() {
     this.platform.ready().then(() => {
@@ -34,6 +56,20 @@ export class AppComponent {
         if(this.router.url != '/'        )
         window.location.href = "/";
       }
+    });
+    this.router.events.subscribe((event: RouterEvent) => {
+      if (event instanceof NavigationEnd && event.url === '/') {
+        this.menuCtrl.enable(false);
+      }
     }); 
+    this.router.events.subscribe((event: RouterEvent) => {
+      if (event instanceof NavigationEnd) {
+        this.pages.map( p => {
+          return p['active'] = (event.url === p.url);
+        });
+      }
+    });
   }
+
+
 }
