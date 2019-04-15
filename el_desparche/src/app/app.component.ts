@@ -25,9 +25,9 @@ export class AppComponent {
 
   pages = [
     {
-      title: 'Login',
-      url: '/login',
-      icon: 'log-in'
+      title: 'Home',
+      url: '/nav',
+      icon: 'home'
     },
     {
       title: 'Contact',

@@ -13,40 +13,45 @@
     <ion-card class="welcome-card">
       <ion-img src="/assets/superior.jpg"></ion-img>
       <ion-card-header>
-        <ion-card-title>¡El amor puede esperar, la Cerveza NO porque se calienta!</ion-card-title>
+        <ion-card-title>¡El amor puede esperar, la cerveza NO porque se calienta!</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <p>Dicen que quién bebe cerveza vive menos, menos estresado, menos preocupado, menos triste y menos amargado.<br>
+        <p>Dicen que quién bebe cerveza vive menos..</p><p>menos estresado, menos preocupado, menos triste y menos amargado.<br>
           Suponemos que hoy buscas relajarte y estamos acá para ayudarte a armar un buen plan según tu presupuesto. 
         </p>
       </ion-card-content>
     </ion-card>
 
-    <ion-list lines="none">
-           
+
+    <ion-grid>
+
+         <ion-list lines="none">
+  
      <!--  <ion-item href="https://www.google.com/maps/search/almacenes+de+cadena+bogota/@4.6480351,-74.0660999,17z/data=!3m1!4b1?hl=es-419&authuser=0">-->
-      <ion-button expand="block" fill="outline" slot="end" (click)="presentModalAlmacen()">
+      <ion-button  expand="block" fill="outline" slot="end" (click)="presentModalAlmacen()">
         <ion-icon name="cart"></ion-icon>
-        <ion-label>  Almacenes de cadena.</ion-label>
+        <ion-label>  Almacenes de cadena</ion-label>
       </ion-button>
 
       <ion-button expand="block" fill="outline" slot="end" (click)="presentModalTienda()">
         <ion-icon name="home"></ion-icon>
-        <ion-label>  Tiendas de barrio.</ion-label>
+        <ion-label>  Tiendas de barrio</ion-label>
       </ion-button>
 
       <ion-button expand="block" fill="outline" slot="end" href="https://www.google.com/maps/search/bares+bogota/@4.7225933,-74.1217783,12z/data=!3m1!4b1?hl=es-419&authuser=0">  
      <!-- <ion-button expand="block" fill="outline" slot="end" (click)="presentModalBar()">-->
         <ion-icon name="wine"></ion-icon>
-        <ion-label>  Cafe - Bar.</ion-label>
+        <ion-label>  Cafe - Bar</ion-label>
       </ion-button>
 
       <ion-button expand="block" fill="outline" slot="end" href="https://www.google.com/maps/search/discotecas+bogota/@4.7229284,-74.1217785,12z/data=!3m1!4b1?hl=es-419&authuser=0"> 
      <!-- <ion-button expand="block" fill="outline" slot="end" (click)="presentModalDisco()"> -->
         <ion-icon name="musical-notes"></ion-icon>
-        <ion-label>  Discotecas.</ion-label>
+        <ion-label>  Discotecas</ion-label>
      </ion-button>
     </ion-list>
+    </ion-grid>
+ 
 
     <ion-footer>
       <ion-toolbar>
