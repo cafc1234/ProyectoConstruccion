@@ -34,11 +34,7 @@ export class AppComponent {
       url: '/cerrar-sesion',
       icon: 'open'
     },
-    {
-      title: 'terminos',
-      url: '/terminos',
-      icon: 'information-circle'
-    }
+ 
   ];
 
 

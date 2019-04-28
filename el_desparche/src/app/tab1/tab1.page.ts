@@ -7,6 +7,7 @@ import { ModalAlmacenPage } from '../modal-almacen/modal-almacen.page';
 import { ModalTiendaPage } from '../modal-tienda/modal-tienda.page';
 import { ModalBarPage } from '../modal-bar/modal-bar.page';
 import { ModalDiscoPage } from '../modal-disco/modal-disco.page'; 
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-tab1',
@@ -15,7 +16,7 @@ import { ModalDiscoPage } from '../modal-disco/modal-disco.page';
 })
 
 export class Tab1Page {
-  constructor(public userService: UserServiceService,public modalController: ModalController){
+  constructor(public userService: UserServiceService,public modalController: ModalController,  public afAuth: AngularFireAuth ){
   
   }
   //Se encarga de mostrar el modal almacen
