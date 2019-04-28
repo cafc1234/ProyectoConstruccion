@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'registro', loadChildren: './registro/registro.module#RegistroPageModule' },
   { path: 'loc', loadChildren: './localidad/localidad.module#LocalidadPageModule' },
   { path: 'terminos', loadChildren: './terminos/terminos.module#TerminosPageModule' },
-  { path: 'tienda-ejemplo', loadChildren: './tienda-ejemplo/tienda-ejemplo.module#TiendaEjemploPageModule' }
+  { path: 'tienda-ejemplo', loadChildren: './tienda-ejemplo/tienda-ejemplo.module#TiendaEjemploPageModule' },  { path: 'cerrar-sesion', loadChildren: './cerrar-sesion/cerrar-sesion.module#CerrarSesionPageModule' }
+
 
 
 

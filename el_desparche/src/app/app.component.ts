@@ -30,9 +30,9 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Contact',
-      url: '/tabs/contact',
-      icon: 'person'
+      title: 'Cerrar sesión',
+      url: '/cerrar-sesion',
+      icon: 'open'
     },
     {
       title: 'terminos',
