@@ -5,7 +5,7 @@
         </ion-buttons>
       <ion-buttons slot="end">
           <ion-button  slot="end" (click)="presentModalTienda()">
-            <ion-icon href="./modal-tienda" name="share-alt"></ion-icon>
+            <ion-icon routerLink="/modal-tienda" name="share-alt"></ion-icon>
           </ion-button>
         </ion-buttons>
     <ion-title>Tiendas de barrio</ion-title>
@@ -25,12 +25,12 @@
     </ion-card>
 
          <ion-card class="pruebas-card">
-           <ion-img src="/assets/Tienda2.jpg" href="./tienda-ejemplo"></ion-img>
+           <ion-img src="/assets/Tienda2.jpg" routerLink="/tienda-ejemplo"></ion-img>
            <ion-card-header>
              <ion-card-title class="titulo">Tienda Don Juan</ion-card-title>
            </ion-card-header>
            <ion-card-content>
-             <a href="./tienda-ejemplo">
+             <a routerLink="/tienda-ejemplo">
              <p >¡Buenas Veci, vendame media!
              </p></a>
            </ion-card-content>

@@ -15,135 +15,158 @@
       <ion-card-title>¡Realiza una búsqueda!</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>Busca las tiendas de barrio disponibles por localidad.
-      </p>
+      <p>Busca las tiendas de barrio disponibles por localidad.</p>
     </ion-card-content>
   </ion-card>
 
+  <ion-searchbar class="sc-ion-searchbar-md-h sc-ion-searchbar-md-s md searchbar-left-aligned hydrated">
+    <div class="searchbar-input-container sc-ion-searchbar-md">
+      <ion-icon class="searchbar-search-icon sc-ion-searchbar-md md hydrated" role="img" aria-label="search"></ion-icon>
+      <button type="button" no-blur="" class="searchbar-clear-button sc-ion-searchbar-md">
+        <ion-icon class="searchbar-clear-icon sc-ion-searchbar-md md hydrated" role="img" aria-label="close"></ion-icon>
+  </button>
+</div>
+</ion-searchbar>
 
-  <!-- Searchbar with a placeholder -->
-  <ion-searchbar placeholder="Filtra tu búsqueda" autocomplete></ion-searchbar>
+  <ion-list class="ios list-ios hydrated">
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Usaquén</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Chapinero</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Santa Fe</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">San Cristóbal</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Barrios Unidos</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Engativá</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Kennedy</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Fontibón</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Bosa</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Ciudad Bolívar</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Suba</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Teusaquillo</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Los Mártires</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Antonio Nariño</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">La Candelaria</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Sumapaz</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Rafael Uribe Uribe</ion-item>
+    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Tunjuelito</ion-item>
+  </ion-list>
+</ion-content>
+  <!-- Searchbar with a placeholder 
+    <ion-searchbar>
 
-
-
-
-
-  <ion-list lines="none">
+    </ion-searchbar>
+  
+  <ion-list lines="none" class="list">
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label> Usaquén.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label> Chapinero.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label> Santa Fe.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>San Cristóbal.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Barrios Unidos.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Engativá.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Kennedy.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Fontibón.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Bosa.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Ciudad Bolívar.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Suba.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Teusaquillo.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Los Mártires.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Antonio Nariño.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label> Puente Aranda.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>La Candelaria.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Sumapaz.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label> Rafael Uribe Uribe.</ion-label>
       </a>
     </ion-card>
 
     <ion-card>
-      <a href="./loc">
+      <a routerLink="/loc">
         <ion-label>Tunjuelito.</ion-label>
       </a>
-    </ion-card>
+    </ion-card> 
+    </ion-list>-->
 
-
-  </ion-list>
-
-</ion-content>
