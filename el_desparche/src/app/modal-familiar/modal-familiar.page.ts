@@ -34,10 +34,10 @@ export class ModalFamiliarPage implements OnInit {
       )
   }
 
-  closeModal()
-  {
+  closeModal() {
     this.modalCtrl.dismiss();
-  }
+    window.location.href = "nav";
+    }
 
   continuar(){
     this.confirmarInvitados();

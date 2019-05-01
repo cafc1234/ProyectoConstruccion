@@ -19,35 +19,14 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-searchbar class="sc-ion-searchbar-md-h sc-ion-searchbar-md-s md searchbar-left-aligned hydrated">
-    <div class="searchbar-input-container sc-ion-searchbar-md">
-      <ion-icon class="searchbar-search-icon sc-ion-searchbar-md md hydrated" role="img" aria-label="search"></ion-icon>
-      <button type="button" no-blur="" class="searchbar-clear-button sc-ion-searchbar-md">
-        <ion-icon class="searchbar-clear-icon sc-ion-searchbar-md md hydrated" role="img" aria-label="close"></ion-icon>
-  </button>
-</div>
-</ion-searchbar>
+  <ion-searchbar class="sc-ion-searchbar-md-h sc-ion-searchbar-md-s md searchbar-left-aligned hydrated" (ionInput)="getItems($event)">
+  </ion-searchbar>
 
-  <ion-list class="ios list-ios hydrated">
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Usaquén</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Chapinero</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Santa Fe</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">San Cristóbal</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Barrios Unidos</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Engativá</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Kennedy</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Fontibón</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Bosa</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Ciudad Bolívar</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Suba</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Teusaquillo</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Los Mártires</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Antonio Nariño</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">La Candelaria</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Sumapaz</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Rafael Uribe Uribe</ion-item>
-    <ion-item class="item ios in-list ion-focusable hydrated" style="display: block;" routerLink="/loc">Tunjuelito</ion-item>
-  </ion-list>
+  <ion-list >
+    <ion-item *ngFor="let item of items" routerLink="/loc">
+      {{item}}
+    </ion-item>
+   </ion-list>
 </ion-content>
   <!-- Searchbar with a placeholder 
     <ion-searchbar>

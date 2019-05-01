@@ -12,9 +12,46 @@ import { UserServiceService } from '../services/user-service.service';
 })
 export class ModalTiendaPage implements OnInit {
 
-  constructor(public userService: UserServiceService, public nav:NavController, public modalCtrl:ModalController) { }
+  searchQuery: string ='';
+  items: string[];
 
+  constructor(public userService: UserServiceService, public nav:NavController, public modalCtrl:ModalController) { 
+    this.initializeItems();
+  }
 
+  initializeItems(){
+    this.items=[
+      'Usaquén',
+      'Chapinero', 
+      'Santa Fe', 
+      'San Cristóbal',
+      'Barrios Unidos',
+      'Engativá',
+      'Kennedy',
+      'Fontibón',
+      'Bosa',
+      'Ciudad Bolívar',
+      'Suba',
+      'Teusaquillo',
+      'Los Mártires',
+      'Antonio Nariño',
+      'La Candelaria',
+      'Sumapaz',
+      'Rafael Uribe Uribe',
+      'Tunjuelito'
+    ];
+  }
+
+  getItems(ev: any){
+    this.initializeItems();
+    const val = ev.target.value;
+
+    if(val && val.trim() != ''){
+      this.items = this.items.filter((item) => {
+        return(item.toLowerCase().indexOf(val.toLowerCase())>-1);
+      })
+    }
+  }
 
   ngOnInit() {
   }
