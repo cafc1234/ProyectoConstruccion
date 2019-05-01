@@ -29,6 +29,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -49,7 +50,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
+    AngularFireAuthModule,AngularFirestoreModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),],
   providers: [
     StatusBar,
