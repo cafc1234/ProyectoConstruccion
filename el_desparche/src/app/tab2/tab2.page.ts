@@ -15,15 +15,8 @@ export class Tab2Page {
   constructor(public modalController: ModalController){
   
   }
-  //Se encarga de mostrar el modal familiar
-  async presentModalFamiliar() {
-    const modal = await this.modalController.create({
-      component: ModalFamiliarPage,
-      componentProps: { value: 123 }
-    });
-    return await modal.present();
-  }
 
+ 
   async presentModalVaca() {
     const modal = await this.modalController.create({
       component: ModalVacaPage,

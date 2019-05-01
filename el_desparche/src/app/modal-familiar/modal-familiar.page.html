@@ -1,16 +1,18 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="end">
-          <ion-button  slot="end" (click)="closeModal()"><ion-icon slot="icon-only" name="close"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-    <ion-title>Plan Familiar</ion-title>
+    <ion-buttons slot="end">
+      <ion-button slot="end" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Agrega un nuevo amigo</ion-title>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-        <ion-list>
+  <!--
+      <ion-list>
           <ion-item *ngFor="let user of users; let identificador=index">
             <ion-avatar item-start>
               <img [src]="user.picture.medium">
@@ -25,4 +27,43 @@
         </ion-list>
         <ion-button  color="primary" (click)="continuar()" expand="block">Continuar
         </ion-button>
+    
+      -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating"> </ion-label>
+          <ion-input placeholder="Nombres"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <ion-item>
+              <ion-label position="floating"> </ion-label>
+              <ion-input type="email" placeholder="Correo"></ion-input>
+            </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <ion-item>
+              <ion-label position="floating"> </ion-label>
+              <ion-input type="number" placeholder="Celular"></ion-input>
+            </ion-item>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-button  color="primary"  expand="block">Agregar</ion-button>
+
+        </ion-col>
+  
+      </ion-row>
+  </ion-grid>
+
+
+
 </ion-content>
