@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalAlmacenPage } from './modal-almacen.page';
+import { AlmacenCadenaPage } from './almacen-cadena.page';
 
-describe('ModalAlmacenPage', () => {
-  let component: ModalAlmacenPage;
-  let fixture: ComponentFixture<ModalAlmacenPage>;
+describe('AlmacenCadenaPage', () => {
+  let component: AlmacenCadenaPage;
+  let fixture: ComponentFixture<AlmacenCadenaPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalAlmacenPage ],
+      declarations: [ AlmacenCadenaPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalAlmacenPage);
+    fixture = TestBed.createComponent(AlmacenCadenaPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

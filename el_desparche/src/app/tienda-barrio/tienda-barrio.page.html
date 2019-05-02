@@ -1,0 +1,154 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button slot="end" routerLink="/nav">
+        <ion-icon name="share-alt"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tiendas de barrio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>¡Realiza una búsqueda!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Busca las tiendas de barrio disponibles por localidad.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-searchbar class="sc-ion-searchbar-md-h sc-ion-searchbar-md-s md searchbar-left-aligned hydrated"
+    (ionInput)="getItems($event)">
+  </ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items" routerLink="/loc">
+      {{item}}
+    </ion-item>
+  </ion-list>
+</ion-content>
+<!-- Searchbar with a placeholder 
+      <ion-searchbar>
+  
+      </ion-searchbar>
+    
+    <ion-list lines="none" class="list">
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label> Usaquén.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label> Chapinero.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label> Santa Fe.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>San Cristóbal.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Barrios Unidos.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Engativá.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Kennedy.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Fontibón.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Bosa.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Ciudad Bolívar.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Suba.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Teusaquillo.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Los Mártires.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Antonio Nariño.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label> Puente Aranda.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>La Candelaria.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Sumapaz.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label> Rafael Uribe Uribe.</ion-label>
+        </a>
+      </ion-card>
+  
+      <ion-card>
+        <a routerLink="/loc">
+          <ion-label>Tunjuelito.</ion-label>
+        </a>
+      </ion-card> 
+      </ion-list>-->

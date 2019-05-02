@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 // Se importa el servicio
-import { UserServiceService } from '../services/user-service.service';
 
 import { NavController,ModalController } from '@ionic/angular';
 
 import { AlertController } from '@ionic/angular';
+
+import {AmigosService,Amigo} from '../services/amigos.service';
+import { ToastController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-modal-vaca',
@@ -13,38 +16,59 @@ import { AlertController } from '@ionic/angular';
 })
 export class ModalVacaPage implements OnInit {
 
-  constructor(public userService: UserServiceService,private nav:NavController,private modalCtrl:ModalController,public alertController: AlertController) { 
+  amigo:Amigo={
+    nombreAmigo:"",
+    correoAmigo:"",
+    celularAmigo:"",
+    correoOwner:this.afAuth.auth.currentUser.email
+  };
+
+  constructor(private nav:NavController,private modalCtrl:ModalController,public alertController: AlertController,public amigosService:AmigosService,
+    public toastController: ToastController,public afAuth: AngularFireAuth) { 
 
   }
 
-  //Se define una variable array de tipo any
-  users: any[] = [];
-  buttonDisable: boolean[] = [];
-  amigos: any[]=[];
-  vaca={'valor':0};
-  //Al cargar trae un servicio 
   ngOnInit() {
-    this.userService.getUsers().subscribe(
-      (data) => { // Success
-      this.users = data['results'];
-      },
-      (error) =>{
-      console.error(error);
-      }
-      )
+
 
     }
-
- continuar(){
-      this.confirmarInvitados();
-}
 
 
 closeModal()
 {
   this.modalCtrl.dismiss();
 }
+guardarData(){
+  if(this.amigo.celularAmigo=="" || this.amigo.nombreAmigo=="" || this.amigo.correoAmigo==""){
+   this.toastError();
+  }else{
+      this.amigosService.setAmigo(this.amigo.nombreAmigo,this.amigo.celularAmigo,this.amigo.correoAmigo, this.amigo.correoOwner);
+      this.toastExito();
+      this.closeModal();
+  }
 
+}
+
+async toastError() {
+  const toast = await this.toastController.create({
+    message: 'Debe completar todo el formulario para poder agregar a tu amigo.',
+    duration: 2000,
+    color:'danger'
+  });
+  toast.present();
+}
+
+async toastExito() {
+  const toast = await this.toastController.create({
+    message: 'Se agregó correctamente a tu amigo.',
+    duration: 2000,
+    color:'success'
+  });
+  toast.present();
+}
+
+
+/*
 async presentAlertConfirm(nombre,identificador) {
   const alert = await this.alertController.create({
     header: 'Confirmación',
@@ -68,6 +92,9 @@ async presentAlertConfirm(nombre,identificador) {
   });
 
   await alert.present();
+}
+continuar(){
+  this.confirmarInvitados();
 }
 
 async confirmarInvitados() {
@@ -97,5 +124,5 @@ async confirmarInvitados() {
 
   await alert.present();
 }
-
+*/
 }

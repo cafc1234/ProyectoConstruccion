@@ -28,12 +28,17 @@ export class AppComponent {
       title: 'Home',
       url: '/nav',
       icon: 'home'
+    },{
+      title: 'Planes',
+      url: '/nav/tabs/tab2',
+      icon: 'md-calendar'
     },
     {
       title: 'Cerrar sesión',
       url: '/cerrar-sesion',
       icon: 'open'
     },
+
  
   ];
 

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';  
+import { FormsModule } from '@angular/forms';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -17,21 +17,15 @@ import { ModalFamiliarPage } from './modal-familiar/modal-familiar.page';
 import { ModalVacaPage } from './modal-vaca/modal-vaca.page';
 import { ModalEventoPage } from './modal-evento/modal-evento.page';
 
-
-import { ModalAlmacenPage } from './modal-almacen/modal-almacen.page';
-import { ModalTiendaPage } from './modal-tienda/modal-tienda.page';
-import { ModalBarPage } from './modal-bar/modal-bar.page';
-import { ModalDiscoPage } from './modal-disco/modal-disco.page';
-
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 import { IonicStorageModule } from '@ionic/storage';
-import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFireAuthModule} from '@angular/fire/auth';
+import { FirebaseUIModule, firebase, firebaseui } from 'firebaseui-angular';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -47,13 +41,13 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 
 @NgModule({
 
-  declarations: [AppComponent,ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage,ModalEventoPage, MenuItemComponent],
-  entryComponents: [ModalFamiliarPage,ModalVacaPage,ModalAlmacenPage,ModalTiendaPage,ModalBarPage,ModalDiscoPage,ModalEventoPage],
+  declarations: [AppComponent, ModalFamiliarPage, ModalVacaPage, ModalEventoPage, MenuItemComponent],
+  entryComponents: [ModalFamiliarPage, ModalVacaPage, ModalEventoPage],
 
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,IonicStorageModule.forRoot(),
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,AngularFirestoreModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig),FormsModule ],
+    AngularFireAuthModule, AngularFirestoreModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig), FormsModule],
   providers: [
     StatusBar,
     UserServiceService,
@@ -63,4 +57,4 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

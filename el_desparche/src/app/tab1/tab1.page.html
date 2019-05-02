@@ -1,8 +1,8 @@
-<ion-header >
+<ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
       El Desparche
     </ion-title>
@@ -10,62 +10,65 @@
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/superior.jpg"></ion-img>
-      <ion-card-header>
-        <ion-card-title *ngIf="afAuth.auth.currentUser">Hola, {{afAuth.auth.currentUser.displayName}}<br> Nos alegra tenerte aquí </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Dicen que quién bebe cerveza vive menos, menos estresado, menos preocupado, menos triste y menos amargado.<br>
-          Suponemos que hoy buscas relajarte y estamos acá para ayudarte a armar un buen plan según tu presupuesto. 
-        </p>
-      </ion-card-content>
-    </ion-card>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/superior.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-title *ngIf="afAuth.auth.currentUser">Hola, {{afAuth.auth.currentUser.displayName}}<br> Nos alegra
+        tenerte aquí </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Dicen que quién bebe cerveza vive menos, menos estresado, menos preocupado, menos triste y menos amargado.<br>
+        Suponemos que hoy buscas relajarte y estamos acá para ayudarte a armar un buen plan según tu presupuesto.
+      </p>
+    </ion-card-content>
+  </ion-card>
 
 
-    <ion-grid>
+  <ion-grid>
 
-         <ion-list lines="none">
-  
-     <!--  <ion-item href="https://www.google.com/maps/search/almacenes+de+cadena+bogota/@4.6480351,-74.0660999,17z/data=!3m1!4b1?hl=es-419&authuser=0">-->
-      <ion-button  expand="block" fill="outline" slot="end" (click)="presentModalAlmacen()">
+    <ion-list lines="none">
+
+      <!--  <ion-item href="https://www.google.com/maps/search/almacenes+de+cadena+bogota/@4.6480351,-74.0660999,17z/data=!3m1!4b1?hl=es-419&authuser=0">-->
+      <ion-button expand="block" fill="outline" slot="end" routerLink="/almacen-cadena">
         <ion-icon name="cart"></ion-icon>
-        <ion-label>  Almacenes de cadena</ion-label>
+        <ion-label> Almacenes de cadena</ion-label>
       </ion-button>
 
-      <ion-button expand="block" fill="outline" slot="end" (click)="presentModalTienda()">
+      <ion-button expand="block" fill="outline" slot="end" routerLink="/tienda-barrio">
         <ion-icon name="home"></ion-icon>
-        <ion-label>  Tiendas de barrio</ion-label>
+        <ion-label> Tiendas de barrio</ion-label>
       </ion-button>
 
-      <ion-button expand="block" fill="outline" slot="end" href="https://www.google.com/maps/search/bares+bogota/@4.7225933,-74.1217783,12z/data=!3m1!4b1?hl=es-419&authuser=0">  
-     <!-- <ion-button expand="block" fill="outline" slot="end" (click)="presentModalBar()">-->
+      <ion-button expand="block" fill="outline" slot="end"
+        href="https://www.google.com/maps/search/bares+bogota/@4.7225933,-74.1217783,12z/data=!3m1!4b1?hl=es-419&authuser=0">
+        <!-- <ion-button expand="block" fill="outline" slot="end" (click)="presentModalBar()">-->
         <ion-icon name="wine"></ion-icon>
-        <ion-label>  Cafe - Bar</ion-label>
+        <ion-label> Cafe - Bar</ion-label>
       </ion-button>
 
-      <ion-button expand="block" fill="outline" slot="end" href="https://www.google.com/maps/search/discotecas+bogota/@4.7229284,-74.1217785,12z/data=!3m1!4b1?hl=es-419&authuser=0"> 
-     <!-- <ion-button expand="block" fill="outline" slot="end" (click)="presentModalDisco()"> -->
+      <ion-button expand="block" fill="outline" slot="end"
+        href="https://www.google.com/maps/search/discotecas+bogota/@4.7229284,-74.1217785,12z/data=!3m1!4b1?hl=es-419&authuser=0">
+        <!-- <ion-button expand="block" fill="outline" slot="end" (click)="presentModalDisco()"> -->
         <ion-icon name="musical-notes"></ion-icon>
-        <ion-label>  Discotecas</ion-label>
-     </ion-button>
+        <ion-label> Discotecas</ion-label>
+      </ion-button>
     </ion-list>
-    </ion-grid>
- 
+  </ion-grid>
 
-    <ion-footer>
-      <ion-toolbar>
-          <ion-card class="Bye-card">
-              <ion-row>
-                  <ion-col size="2" style="zoom:2.0;" >
-                      <ion-icon name="nuclear"></ion-icon>
-                  </ion-col>
-                  <ion-col>
-                      Si van a manejar no tomen,
-                      <br> pero si van a tomar ME LLAMAN. :)
-                  </ion-col>
-               </ion-row>
-          </ion-card>
-      </ion-toolbar>
-    </ion-footer>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-card class="Bye-card">
+        <ion-row>
+          <ion-col size="2" style="zoom:2.0;">
+            <ion-icon name="nuclear"></ion-icon>
+          </ion-col>
+          <ion-col>
+            Si van a manejar no tomen,
+            <br> pero si van a tomar ME LLAMAN. :)
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
