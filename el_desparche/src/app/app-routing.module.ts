@@ -17,7 +17,11 @@ const routes: Routes = [
   { path: 'almacen', loadChildren: './almacen/almacen.module#AlmacenPageModule' },
 
   { path: 'tienda-barrio', loadChildren: './tienda-barrio/tienda-barrio.module#TiendaBarrioPageModule' },
-  { path: 'almacen-cadena', loadChildren: './almacen-cadena/almacen-cadena.module#AlmacenCadenaPageModule' }
+  { path: 'almacen-cadena', loadChildren: './almacen-cadena/almacen-cadena.module#AlmacenCadenaPageModule' },  { path: 'cafe-bar', loadChildren: './cafe-bar/cafe-bar.module#CafeBarPageModule' },
+  { path: 'disco-disco', loadChildren: './disco-disco/disco-disco.module#DiscoDiscoPageModule' },
+  { path: 'cafe-ybar', loadChildren: './cafe-ybar/cafe-ybar.module#CafeYbarPageModule' },
+  { path: 'cafebar', loadChildren: './cafebar/cafebar.module#CafebarPageModule' }
+
 
 
 

@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalBarPage } from './modal-bar.page';
+import { CafebarPage } from './cafebar.page';
 
-describe('ModalBarPage', () => {
-  let component: ModalBarPage;
-  let fixture: ComponentFixture<ModalBarPage>;
+describe('CafebarPage', () => {
+  let component: CafebarPage;
+  let fixture: ComponentFixture<CafebarPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalBarPage ],
+      declarations: [ CafebarPage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalBarPage);
+    fixture = TestBed.createComponent(CafebarPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

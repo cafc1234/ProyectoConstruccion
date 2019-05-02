@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button slot="end" routerLink="/nav">
+        <ion-icon name="share-alt"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Cafe - Bar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>¡Realiza una búsqueda!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Busca las tiendas de barrio disponibles por en tu localidad o ingresa
+        <a
+          href="https://www.google.com/maps/search/almacenes+de+cadena+bogota/@4.6480351,-74.0660999,17z/data=!3m1!4b1?hl=es-419&authuser=0">
+          aquí
+        </a>
+        para visualizarlos en el mapa.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-searchbar class="sc-ion-searchbar-md-h sc-ion-searchbar-md-s md searchbar-left-aligned hydrated"
+    (ionInput)="getItems($event)">
+  </ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items" routerLink="/cafe-ybar">
+      {{item}}
+    </ion-item>
+  </ion-list>
+</ion-content>
