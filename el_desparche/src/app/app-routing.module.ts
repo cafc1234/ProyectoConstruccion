@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: 'loc', loadChildren: './localidad/localidad.module#LocalidadPageModule' },
   { path: 'terminos', loadChildren: './terminos/terminos.module#TerminosPageModule' },
   { path: 'tienda-ejemplo', loadChildren: './tienda-ejemplo/tienda-ejemplo.module#TiendaEjemploPageModule' },  { path: 'cerrar-sesion', loadChildren: './cerrar-sesion/cerrar-sesion.module#CerrarSesionPageModule' },
-  { path: 'plan-familiar', loadChildren: './plan-familiar/plan-familiar.module#PlanFamiliarPageModule' }
+  { path: 'plan-familiar', loadChildren: './plan-familiar/plan-familiar.module#PlanFamiliarPageModule' },
+  { path: 'almacen', loadChildren: './almacen/almacen.module#AlmacenPageModule' }
 
 
 

@@ -1,123 +1,124 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="end">
-          <ion-button  slot="end" (click)="closeModal()"><ion-icon slot="icon-only" name="close"></ion-icon>
-          </ion-button>
-        </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button slot="end" (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Almacenes de cadena</ion-title>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-          <ion-row class="IntroAlmacen">
-              <ion-col size="6">
-                  <ion-card>
-                      <ion-img src="/assets/img/Almacen4.png"></ion-img>
-                      <ion-card-header>
-                        <ion-card-title>Metro</ion-card-title>
-                      </ion-card-header>
-                  </ion-card>
-              </ion-col>
+  <ion-row class="IntroAlmacen">
+    <ion-col size="6">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen4.png" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Metro</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
 
-            <ion-col size="6">
-                <ion-card>
-                  <ion-img src="/assets/img/Almacen1.png"></ion-img>
-                  <ion-card-header>
-                    <ion-card-title>Exito</ion-card-title>
-                  </ion-card-header>
-                </ion-card>
-            </ion-col>
-          </ion-row>
+    <ion-col size="6">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen1.png" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Exito</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 
-          <ion-row class="IntroAlmacen">
-              <ion-col size="10" offset="1">
-                  <ion-card>
-                      <ion-img src="/assets/img/Almacen2.jpg"></ion-img>
-                      <ion-card-header>
-                        <ion-card-title>Justo y Bueno</ion-card-title>
-                      </ion-card-header>
-                  </ion-card>
-              </ion-col>
-              
-              <ion-col size="8" offset="2">
-                  <ion-card>
-                    <ion-img src="/assets/img/Almacen3.jpg"></ion-img>
-                    <ion-card-header>
-                      <ion-card-title>Colsubsidio</ion-card-title>
-                    </ion-card-header>
-                  </ion-card>
-              </ion-col>
-            </ion-row>
+  <ion-row class="IntroAlmacen">
+    <ion-col size="10" offset="1">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen2.jpg" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Justo y Bueno</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
 
-            <ion-row class="IntroAlmacen">
-                <ion-col size="6">
-                    <ion-card>
-                      <ion-img src="/assets/img/Almacen6.jpg"></ion-img>
-                      <ion-card-header>
-                        <ion-card-title>Tiendas D1</ion-card-title>
-                      </ion-card-header>
-                    </ion-card>
-                </ion-col>
-                
-                <ion-col size="6">
-                    <ion-card>
-                      <ion-img src="/assets/img/Almacen9.jpg"></ion-img>
-                      <ion-card-header>
-                        <ion-card-title>Olimpica</ion-card-title>
-                      </ion-card-header>
-                    </ion-card>
-                </ion-col>
-            </ion-row>
+    <ion-col size="8" offset="2">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen3.jpg" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Colsubsidio</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 
-            <ion-row class="IntroAlmacen">
-                <ion-col size="6">
-                    <ion-card>
-                        <ion-img src="/assets/img/Almacen0.jpg"></ion-img>
-                        <ion-card-header>
-                          <ion-card-title>Alkosto</ion-card-title>
-                        </ion-card-header>
-                    </ion-card>
-                </ion-col>
+  <ion-row class="IntroAlmacen">
+    <ion-col size="6">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen6.jpg" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Tiendas D1</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
 
-                <ion-col size="6">
-                    <ion-card>
-                      <ion-img src="/assets/img/Almacen8.png"></ion-img>
-                      <ion-card-header>
-                        <ion-card-title>Oxxo</ion-card-title>
-                      </ion-card-header>
-                    </ion-card>
-                </ion-col>
-              </ion-row>
+    <ion-col size="6">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen9.jpg" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Olimpica</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 
-              <ion-row class="IntroAlmacen">            
-                  <ion-col size="6">
-                      <ion-card>
-                          <ion-img src="/assets/img/Almacen5.png"></ion-img>
-                          <ion-card-header>
-                            <ion-card-title>La 14</ion-card-title>
-                          </ion-card-header>
-                      </ion-card>
-                  </ion-col>
+  <ion-row class="IntroAlmacen">
+    <ion-col size="6">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen0.jpg " routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Alkosto</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
 
-                  <ion-col size="6">
-                      <ion-card>
-                          <ion-img src="/assets/img/Almacen7.jpg"></ion-img>
-                          <ion-card-header>
-                            <ion-card-title>Jumbo</ion-card-title>
-                          </ion-card-header>
-                      </ion-card>
-                  </ion-col>   
-                </ion-row>
+    <ion-col size="6">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen8.png" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Oxxo</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 
-              <ion-row class="IntroAlmacen">
-                <ion-col size="8" offset="2">
-                    <ion-card>
-                      <ion-img src="/assets/img/Almacen10.png"></ion-img>
-                      <ion-card-header>
-                        <ion-card-title>Carulla</ion-card-title>
-                      </ion-card-header>
-                    </ion-card>
-                </ion-col>
-              </ion-row>
+  <ion-row class="IntroAlmacen">
+    <ion-col size="6">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen5.png" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">La 14</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen7.jpg" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Jumbo</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="IntroAlmacen">
+    <ion-col size="8" offset="2">
+      <ion-card>
+        <ion-img src="/assets/img/Almacen10.png" routerLink="/almacen"></ion-img>
+        <ion-card-header>
+          <ion-card-title routerLink="/almacen">Carulla</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
 </ion-content>

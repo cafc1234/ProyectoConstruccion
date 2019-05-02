@@ -1,52 +1,55 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-      <ion-buttons slot="end">
-          <ion-button  slot="end" (click)="presentModalTienda()">
-            <ion-icon routerLink="/modal-tienda" name="share-alt"></ion-icon>
-          </ion-button>
-        </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button slot="end" (click)="presentModalTienda()">
+        <ion-icon routerLink="/modal-tienda" name="share-alt"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Tiendas de barrio</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-card-header>
-        <ion-card-title>¡Tiendas en tu localidad!</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Estas son las tiendas de barrio más visitadas e importantes en 
-          tu localidad, apoyemos a nuestros emprendedores vecinos. 
-        </p>
-      </ion-card-content>
-    </ion-card>
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>¡Tiendas en tu localidad!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Estas son las tiendas de barrio más visitadas e importantes en
+        tu localidad, apoyemos a nuestros emprendedores vecinos.
+      </p>
+    </ion-card-content>
+  </ion-card>
 
-         <ion-card class="pruebas-card">
-           <ion-img src="/assets/Tienda2.jpg" routerLink="/tienda-ejemplo"></ion-img>
-           <ion-card-header>
-             <ion-card-title class="titulo">Tienda Don Juan</ion-card-title>
-           </ion-card-header>
-           <ion-card-content>
-             <a routerLink="/tienda-ejemplo">
-             <p >¡Buenas Veci, vendame media!
-             </p></a>
-           </ion-card-content>
-         </ion-card>
- 
-         
-           <ion-card class="pruebas-card">
-             <ion-img src="/assets/Tienda2.jpg"></ion-img>
-             <ion-card-header>
-               <ion-card-title>Tienda Doña Marta</ion-card-title>
-             </ion-card-header>
-             <ion-card-content>
-               <p>¿Una pola y nos vamos?
-               </p>
-             </ion-card-content>
-           </ion-card>
- 
+  <ion-card class="pruebas-card">
+    <ion-img src="/assets/Tienda2.jpg" routerLink="/tienda-ejemplo"></ion-img>
+    <ion-card-header>
+      <ion-card-title class="titulo">Tienda Don Juan</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <a routerLink="/tienda-ejemplo">
+        <p>¡Buenas Veci, vendame media!
+        </p>
+      </a>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card class="pruebas-card">
+    <ion-img src="/assets/Tienda2.jpg" routerLink="/tienda-ejemplo"></ion-img>
+    <ion-card-header>
+      <ion-card-title>Tienda Doña Marta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <a routerLink="/tienda-ejemplo">
+        <p>¿Una pola y nos vamos?
+        </p>
+      </a>
+    </ion-card-content>
+  </ion-card>
+
 
 </ion-content>
