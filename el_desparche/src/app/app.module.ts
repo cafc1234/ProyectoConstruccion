@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';  
+
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -51,7 +53,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,AngularFirestoreModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig),],
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),FormsModule ],
   providers: [
     StatusBar,
     UserServiceService,

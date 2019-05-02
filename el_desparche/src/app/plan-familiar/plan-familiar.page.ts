@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalFamiliarPage } from '../modal-familiar/modal-familiar.page';
-import {FamiliaresService} from '../services/familiares.service';
+import {FamiliaresService,Familiar} from '../services/familiares.service';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 @Component({
   selector: 'app-plan-familiar',
@@ -12,14 +14,11 @@ export class PlanFamiliarPage implements OnInit {
 
   public familiares:any=[];
 
-  constructor(public modalController: ModalController, public familiaresService:FamiliaresService) { }
+  constructor(public modalController: ModalController, public familiaresService:FamiliaresService,public afAuth: AngularFireAuth) { }
 
   ngOnInit() {
     this.familiaresService.getFamiliares().subscribe(familiares=>{
-         familiares.map(familiares=>{
-              //console.log(familiares.payload.doc.data());
-              this.familiares.push(familiares.payload.doc.data());
-         });
+           this.familiares=familiares;
      });
   }
 

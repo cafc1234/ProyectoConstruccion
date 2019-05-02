@@ -18,7 +18,7 @@ export class AppComponent {
     private statusBar: StatusBar,
     public afAuth: AngularFireAuth,
     private router: Router,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
   ) {
     this.initializeApp();
   }

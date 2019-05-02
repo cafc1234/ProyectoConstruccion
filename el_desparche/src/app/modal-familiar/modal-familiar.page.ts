@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-// Se importa el servicio
-import { UserServiceService } from '../services/user-service.service';
 
 import { NavController,ModalController } from '@ionic/angular';
 
 import { AlertController } from '@ionic/angular';
+
+import {FamiliaresService,Familiar} from '../services/familiares.service';
+import { ToastController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 
 
@@ -15,30 +18,70 @@ import { AlertController } from '@ionic/angular';
 })
 export class ModalFamiliarPage implements OnInit {
 
-  constructor(public userService: UserServiceService,private nav:NavController,private modalCtrl:ModalController,public alertController: AlertController) { }
+  constructor(
+    private nav:NavController,private modalCtrl:ModalController,
+    public alertController: AlertController,  public familiaresService:FamiliaresService,
+    public toastController: ToastController,public afAuth: AngularFireAuth) { }
   //Se define una variable array de tipo any
-  users: any[] = [];
-  amigos: any[]=[];
+  //users: any[] = [];
+  //amigos: any[]=[];
 
-  buttonDisable: boolean[] = [];
+  //buttonDisable: boolean[] = [];
   //Al cargar trae un servicio
 
+ familiar:Familiar={
+   nombreFamiliar:"",
+   correo:"",
+   celular:"",
+   correoOwner:this.afAuth.auth.currentUser.email
+ };
+
+
   ngOnInit() {
-    this.userService.getUsers().subscribe(
+    
+   /* this.userService.getUsers().subscribe(
       (data) => { // Success
       this.users = data['results'];
       },
       (error) =>{
       console.error(error);
       }
-      )
+      )*/
   }
 
   closeModal() {
     this.modalCtrl.dismiss();
-    window.location.href = "nav";
     }
 
+    guardarData(){
+       if(this.familiar.celular=="" || this.familiar.nombreFamiliar=="" || this.familiar.correo==""){
+        this.toastError();
+       }else{
+           this.familiaresService.setFamiliar(this.familiar.nombreFamiliar,this.familiar.celular,this.familiar.correo, this.familiar.correoOwner);
+           this.toastExito();
+           this.closeModal();
+       }
+
+    }
+
+    async toastError() {
+      const toast = await this.toastController.create({
+        message: 'Debe completar todo el formulario para poder agregar al familiar.',
+        duration: 2000,
+        color:'danger'
+      });
+      toast.present();
+    }
+
+    async toastExito() {
+      const toast = await this.toastController.create({
+        message: 'Se agregó correctamente al familiar.',
+        duration: 2000,
+        color:'success'
+      });
+      toast.present();
+    }
+/*
   continuar(){
     this.confirmarInvitados();
   }
@@ -94,5 +137,5 @@ export class ModalFamiliarPage implements OnInit {
     await alert.present();
   }
 
-
+*/
 }

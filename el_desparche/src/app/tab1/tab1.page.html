@@ -13,7 +13,7 @@
     <ion-card class="welcome-card">
       <ion-img src="/assets/superior.jpg"></ion-img>
       <ion-card-header>
-        <ion-card-title>Hola, {{afAuth.auth.currentUser.displayName}}<br> Nos alegra tenerte aquí </ion-card-title>
+        <ion-card-title *ngIf="afAuth.auth.currentUser">Hola, {{afAuth.auth.currentUser.displayName}}<br> Nos alegra tenerte aquí </ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <p>Dicen que quién bebe cerveza vive menos, menos estresado, menos preocupado, menos triste y menos amargado.<br>

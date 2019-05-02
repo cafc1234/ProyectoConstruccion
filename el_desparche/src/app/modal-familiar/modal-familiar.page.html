@@ -5,7 +5,7 @@
         <ion-icon slot="icon-only" name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Agrega un nuevo amigo</ion-title>
+    <ion-title>Agrega un nuevo familiar</ion-title>
 
   </ion-toolbar>
 </ion-header>
@@ -34,7 +34,7 @@
       <ion-col>
         <ion-item>
           <ion-label position="floating"> </ion-label>
-          <ion-input placeholder="Nombres"></ion-input>
+          <ion-input placeholder="Nombres" [(ngModel)]="familiar.nombreFamiliar"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>
@@ -42,7 +42,7 @@
       <ion-col>
           <ion-item>
               <ion-label position="floating"> </ion-label>
-              <ion-input type="email" placeholder="Correo"></ion-input>
+              <ion-input type="email" [(ngModel)]="familiar.correo" placeholder="Correo"></ion-input>
             </ion-item>
       </ion-col>
     </ion-row>
@@ -50,14 +50,14 @@
       <ion-col>
           <ion-item>
               <ion-label position="floating"> </ion-label>
-              <ion-input type="number" placeholder="Celular"></ion-input>
+              <ion-input type="text" [(ngModel)]="familiar.celular" placeholder="Celular"></ion-input>
             </ion-item>
       </ion-col>
 
     </ion-row>
     <ion-row>
         <ion-col>
-            <ion-button  color="primary"  expand="block">Agregar</ion-button>
+            <ion-button  color="primary"  expand="block" (click)="guardarData()">Agregar</ion-button>
 
         </ion-col>
   
