@@ -26,11 +26,13 @@
                 <p>{{ amigo.correoAmigo}}</p>
             </ion-label>
       
-            <ion-button  slot="end" >
+            <ion-button  slot="end" (click)="presentAlertConfirm(amigo.nombreAmigo,amigo.correoAmigo,identificador)" [disabled]="botonDeshabilitado[identificador]">
       
                 <ion-icon slot="icon-only" name="mail"></ion-icon>
               </ion-button>
       
           </ion-item>
         </ion-list>
+        <ion-button *ngIf="amigos" color="primary" (click)="continuar()" expand="block">Continuar
+          </ion-button>
 </ion-content>

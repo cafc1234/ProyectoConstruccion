@@ -3,6 +3,8 @@ import { ModalController } from '@ionic/angular';
 import { ModalFamiliarPage } from '../modal-familiar/modal-familiar.page';
 import {FamiliaresService,Familiar} from '../services/familiares.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AlertController } from '@ionic/angular';
+
 
 
 @Component({
@@ -13,12 +15,13 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class PlanFamiliarPage implements OnInit {
 
   public familiares:any=[];
-
-  constructor(public modalController: ModalController, public familiaresService:FamiliaresService,public afAuth: AngularFireAuth) { }
+  public familiaresInvitados: any[]=[];
+  constructor(public modalController: ModalController, public familiaresService:FamiliaresService,public afAuth: AngularFireAuth,public alertController: AlertController) { }
 
   ngOnInit() {
     this.familiaresService.getFamiliares().subscribe(familiares=>{
            this.familiares=familiares;
+
      });
   }
 
@@ -29,6 +32,61 @@ export class PlanFamiliarPage implements OnInit {
         componentProps: { value: 123 }
       });
       return await modal.present();
+    }
+    botonDeshabilitado: boolean[] = [];
+
+    async presentAlertConfirm(nombre,correo,identificador) {
+      const alert = await this.alertController.create({
+        header: 'Confirmación',
+        message: '¿Deseas enviar la invitación a '+nombre+' ?',
+        buttons: [
+          {
+            text: 'Cancelar',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              console.log('Confirm Cancel: blah');
+            }
+          }, {
+            text: 'Aceptar',
+            handler: () => {
+              this.botonDeshabilitado[identificador]=true;
+              this.familiaresInvitados.push(correo);
+              console.log(identificador);
+            }
+          }
+        ]
+      });
+  
+      await alert.present();
+    }
+
+    continuar(){
+      this.confirmarInvitados();
+    }
+
+    async confirmarInvitados() {
+      const alert = await this.alertController.create({
+        header: 'Confirmación',
+        message: '¿Deseas enviar la invitación a '+this.familiaresInvitados.length+' familiares ?',
+        buttons: [
+          {
+            text: 'Cancelar',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: (blah) => {
+              console.log('Confirm Cancel: blah');
+            }
+          }, {
+            text: 'Aceptar',
+            handler: () => {
+             console.log(this.familiares);
+            }
+          }
+        ]
+      });
+  
+      await alert.present();
     }
 
 }
