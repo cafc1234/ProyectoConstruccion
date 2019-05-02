@@ -32,12 +32,16 @@ export class AppComponent {
       title: 'Planes',
       url: '/nav/tabs/tab2',
       icon: 'md-calendar'
+    },{
+      title: 'Invitaciones a familiares',
+      url: '/invitaciones-familiares',
+      icon: 'mail'
     },
     {
       title: 'Cerrar sesión',
       url: '/cerrar-sesion',
       icon: 'open'
-    },
+    }
 
  
   ];

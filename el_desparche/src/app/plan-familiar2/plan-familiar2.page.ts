@@ -3,6 +3,8 @@ import {InvitacionesService} from '../services/invitaciones.service'
 import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
+
 
 
 
@@ -18,7 +20,7 @@ export class PlanFamiliar2Page implements OnInit {
     'local':"",
     'emailOwner':this.afAuth.auth.currentUser.email};
   constructor(public invitacionService:InvitacionesService,public alertController: AlertController,
-    public toastController: ToastController,public afAuth: AngularFireAuth) { }
+    public toastController: ToastController,public afAuth: AngularFireAuth,private router: Router) { }
 
   ngOnInit() {
     console.log(this.invitacionService.listadoInvitados);
@@ -56,6 +58,8 @@ export class PlanFamiliar2Page implements OnInit {
     if(this.invitacion.local!="" && this.invitacionService.listadoInvitados.length>0){
             this.invitacionService.setInvitacion(this.invitacion.local,this.invitacionService.listadoInvitados,this.invitacion.emailOwner);
             this.toastExito();
+            this.router.navigateByUrl('/invitaciones-familiares');
+
           }else{
       this.toastError();
     }

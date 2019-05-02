@@ -57,7 +57,6 @@ export class PlanFamiliarPage implements OnInit {
             handler: () => {
               this.botonDeshabilitado[identificador]=true;
               this.familiaresInvitados.push(correo);
-              console.log(identificador);
             }
           }
         ]
