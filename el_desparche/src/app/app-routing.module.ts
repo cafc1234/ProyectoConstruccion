@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'almacen-cadena', loadChildren: './almacen-cadena/almacen-cadena.module#AlmacenCadenaPageModule' },  { path: 'cafe-bar', loadChildren: './cafe-bar/cafe-bar.module#CafeBarPageModule' },
   { path: 'disco-disco', loadChildren: './disco-disco/disco-disco.module#DiscoDiscoPageModule' },
   { path: 'cafe-ybar', loadChildren: './cafe-ybar/cafe-ybar.module#CafeYbarPageModule' },
-  { path: 'cafebar', loadChildren: './cafebar/cafebar.module#CafebarPageModule' }
+  { path: 'cafebar', loadChildren: './cafebar/cafebar.module#CafebarPageModule' },
+  { path: 'discotecas', loadChildren: './discotecas/discotecas.module#DiscotecasPageModule' }
 
 
 
