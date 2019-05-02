@@ -15,17 +15,13 @@ const routes: Routes = [
   { path: 'cerrar-sesion', loadChildren: './cerrar-sesion/cerrar-sesion.module#CerrarSesionPageModule' },
   { path: 'plan-familiar', loadChildren: './plan-familiar/plan-familiar.module#PlanFamiliarPageModule' },
   { path: 'almacen', loadChildren: './almacen/almacen.module#AlmacenPageModule' },
-<<<<<<< HEAD
+
   { path: 'tienda-barrio', loadChildren: './tienda-barrio/tienda-barrio.module#TiendaBarrioPageModule' },
   { path: 'almacen-cadena', loadChildren: './almacen-cadena/almacen-cadena.module#AlmacenCadenaPageModule' }
 
 
 
 
-
-=======
-  { path: 'plan-vaca', loadChildren: './plan-vaca/plan-vaca.module#PlanVacaPageModule' }
->>>>>>> b15911153c66051be1e81aac127f935839701470
 
 ];
 @NgModule({
