@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'disco-disco', loadChildren: './disco-disco/disco-disco.module#DiscoDiscoPageModule' },
   { path: 'cafe-ybar', loadChildren: './cafe-ybar/cafe-ybar.module#CafeYbarPageModule' },
   { path: 'cafebar', loadChildren: './cafebar/cafebar.module#CafebarPageModule' },
-  { path: 'discotecas', loadChildren: './discotecas/discotecas.module#DiscotecasPageModule' }
+  { path: 'discotecas', loadChildren: './discotecas/discotecas.module#DiscotecasPageModule' },  { path: 'plan-familiar2', loadChildren: './plan-familiar2/plan-familiar2.module#PlanFamiliar2PageModule' }
+
 
 
 

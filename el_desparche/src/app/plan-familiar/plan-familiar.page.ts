@@ -4,6 +4,9 @@ import { ModalFamiliarPage } from '../modal-familiar/modal-familiar.page';
 import {FamiliaresService,Familiar} from '../services/familiares.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AlertController } from '@ionic/angular';
+import{InvitacionesService} from '../services/invitaciones.service'
+import { Router } from '@angular/router';
+
 
 
 
@@ -16,7 +19,9 @@ export class PlanFamiliarPage implements OnInit {
 
   public familiares:any=[];
   public familiaresInvitados: any[]=[];
-  constructor(public modalController: ModalController, public familiaresService:FamiliaresService,public afAuth: AngularFireAuth,public alertController: AlertController) { }
+  constructor(public modalController: ModalController, public familiaresService:FamiliaresService,
+    public afAuth: AngularFireAuth,public alertController: AlertController, 
+    public invitacionesService:InvitacionesService,private router: Router) { }
 
   ngOnInit() {
     this.familiaresService.getFamiliares().subscribe(familiares=>{
@@ -80,7 +85,8 @@ export class PlanFamiliarPage implements OnInit {
           }, {
             text: 'Aceptar',
             handler: () => {
-             console.log(this.familiares);
+              this.invitacionesService.listadoInvitados=this.familiaresInvitados;
+              this.router.navigateByUrl('/plan-familiar2');
             }
           }
         ]

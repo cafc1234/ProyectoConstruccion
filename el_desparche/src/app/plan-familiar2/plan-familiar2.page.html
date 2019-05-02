@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+
+        </ion-buttons>
+    <ion-title>Plan familiar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-list>
+              <ion-list-header>Seleccione el tipo de establecimiento</ion-list-header>
+            
+              <ion-item>
+                <ion-select placeholder="Selecciona uno" [(ngModel)]="invitacion.select">
+                  <ion-select-option value="cafe">Café/Bar</ion-select-option>
+                  <ion-select-option value="discoteca">Discoteca</ion-select-option>
+                </ion-select>
+              </ion-item>
+            
+
+            
+            </ion-list>      
+          </ion-col>
+          <ion-col *ngIf="invitacion.select" [ngSwitch]="invitacion.select">
+              <ion-list *ngSwitchCase="'cafe'">
+                  <ion-list-header>Seleccione el café/bar</ion-list-header>
+                
+                  <ion-item>
+                    <ion-select placeholder="Selecciona uno" [(ngModel)]="invitacion.local">
+                      <ion-select-option value="barHits">Bar hits</ion-select-option>
+                      <ion-select-option value="bar22">Bar 22</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                
+                 
+                </ion-list> 
+                <ion-list *ngSwitchCase="'discoteca'">
+                    <ion-list-header>Seleccione la discoteca</ion-list-header>
+                  
+                    <ion-item>
+                      <ion-select placeholder="Selecciona uno" [(ngModel)]="invitacion.local">
+                        <ion-select-option value="rock">Rock</ion-select-option>
+                        <ion-select-option value="crosover">Crosover</ion-select-option>
+                        <ion-select-option value="vallenato">Vallenato</ion-select-option>
+                        <ion-select-option value="jazz">Jazz</ion-select-option>
+
+                      </ion-select>
+                    </ion-item>
+                  
+                   
+                  </ion-list>
+
+          </ion-col>
+          <ion-col *ngIf="invitacion.local">
+              <ion-button color="primary" (click)="finalizarInvitacion()" expand="block">Finalizar invitación
+                </ion-button>
+          </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
