@@ -17,13 +17,7 @@ export class Tab2Page {
   }
 
  
-  async presentModalVaca() {
-    const modal = await this.modalController.create({
-      component: ModalVacaPage,
-      componentProps: { value: 123 }
-    });
-    return await modal.present();
-  }
+
 
   async presentModalEvento() {
     const modal = await this.modalController.create({

@@ -5,34 +5,47 @@
         <ion-icon slot="icon-only" name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Arma tu vaca</ion-title>
+    <ion-title>Agrega un amigo</ion-title>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label position="floating">Defina el valor de la vaca</ion-label>
-    <ion-input type="number"   ></ion-input>
-  </ion-item>
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating"> </ion-label>
+              <ion-input placeholder="Nombres" [(ngModel)]="amigo.nombreAmigo"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-item>
+                  <ion-label position="floating"> </ion-label>
+                  <ion-input type="email" [(ngModel)]="amigo.correoAmigo" placeholder="Correo"></ion-input>
+                </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-item>
+                  <ion-label position="floating"> </ion-label>
+                  <ion-input type="text" [(ngModel)]="amigo.celularAmigo" placeholder="Celular"></ion-input>
+                </ion-item>
+          </ion-col>
+    
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button  color="primary"  expand="block" (click)="guardarData()">Agregar</ion-button>
+    
+            </ion-col>
+      
+          </ion-row>
+      </ion-grid>
 
-  <ion-list>
-    <ion-item *ngFor="let user of users ;let identificador=index">
-      <ion-avatar item-start>
-        <img [src]="user.picture.medium">
-      </ion-avatar>
-      <h2>{{ user.name.first | uppercase }}</h2>
-      <ion-button slot="end" (click)="presentAlertConfirm(user.name.first,identificador)"
-        [disabled]="buttonDisable[identificador]">
-
-        <ion-icon slot="icon-only" name="mail"></ion-icon>
-      </ion-button>
-
-    </ion-item>
-
-  </ion-list>
-  <ion-button  color="primary" (click)="continuar()" expand="block">Continuar
-  </ion-button>
 
 
 </ion-content>
