@@ -46,5 +46,9 @@ export class InvitacionesService {
     });
 }
 
+  deleteInvitacion(idInvitacion){
+    this.db.collection('InvitacionesFamiliar').doc(idInvitacion).delete();
+  }
+
 
 }

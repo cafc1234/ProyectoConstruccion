@@ -13,7 +13,7 @@ export class InvitacionesFamiliaresPage implements OnInit {
   public invitaciones:any=[];
 
 
-  constructor(public invitacionService:InvitacionesService) { }
+  constructor(public invitacionService:InvitacionesService,public alertController: AlertController) { }
 
   ngOnInit() {
     this.invitacionService.getInvitaciones().subscribe(invitaciones=>{
@@ -21,7 +21,34 @@ export class InvitacionesFamiliaresPage implements OnInit {
 });
   }
   cancelarInvitacion(idInvitacion){
-     console.log(idInvitacion);
+    this.presentAlertConfirm(idInvitacion)  
+  }
+
+
+
+
+  async presentAlertConfirm(idInvitacion) {
+    const alert = await this.alertController.create({
+      header: 'Confirmación',
+      message: '¿Deseas cancelar esta invitación?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Aceptar',
+          handler: () => {
+            this.invitacionService.deleteInvitacion(idInvitacion);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
 }
