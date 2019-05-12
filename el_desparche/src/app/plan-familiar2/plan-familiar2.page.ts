@@ -23,7 +23,6 @@ export class PlanFamiliar2Page implements OnInit {
     public toastController: ToastController,public afAuth: AngularFireAuth,private router: Router) { }
 
   ngOnInit() {
-    console.log(this.invitacionService.listadoInvitados);
   }
 
   finalizarInvitacion(){
@@ -56,7 +55,7 @@ export class PlanFamiliar2Page implements OnInit {
 
   guardarData(){
     if(this.invitacion.local!="" && this.invitacionService.listadoInvitados.length>0){
-            this.invitacionService.setInvitacion(this.invitacion.local,this.invitacionService.listadoInvitados,this.invitacion.emailOwner);
+            this.invitacionService.setInvitacion(this.invitacion.local,this.invitacionService.listadoInvitados,this.invitacion.emailOwner,'Sin accion');
             this.toastExito();
             this.router.navigateByUrl('/invitaciones-familiares');
 

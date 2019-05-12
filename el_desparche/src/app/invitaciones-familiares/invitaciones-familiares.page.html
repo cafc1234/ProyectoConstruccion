@@ -3,20 +3,24 @@
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-    <ion-title>Mis invitaciones a familiares</ion-title>
+    <ion-title>Mis invitaciones</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+    <h3>Tus invitaciones a familiares</h3>
     <ion-list>
         <ion-item *ngFor="let invitacion of invitaciones; let identificador=index">
           <ion-label>
               <h4>Lugar: {{ invitacion.local | uppercase}}</h4>
               <p>Invitados:</p>
               <p *ngFor="let invitado of invitacion.invitados;">{{invitado}}</p>
-
+              
           </ion-label>
+          <ion-button  slot="end" (click)="cancelarInvitacion(invitacion.id)">
 
+              <ion-icon slot="icon-only"  name="close"></ion-icon>
+            </ion-button>
           
     
         </ion-item>

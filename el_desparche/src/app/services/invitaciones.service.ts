@@ -5,6 +5,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 
 export interface Invitacion{
+  id:String
   local:String
   invitados:String[]
   correoOwner:String
@@ -30,6 +31,7 @@ export class InvitacionesService {
       return invitaciones.map(a=>{
           
           const data = a.payload.doc.data() as Invitacion;
+          data.id=a.payload.doc.id;
           return data;
       })
     }));
@@ -38,9 +40,9 @@ export class InvitacionesService {
 
 
 
-  setInvitacion(local,invitados:String[],correoOwner){
+  setInvitacion(local,invitados:String[],correoOwner,estado){
     this.db.collection('InvitacionesFamiliar').add({
-      local,invitados,correoOwner
+      local,invitados,correoOwner,estado
     });
 }
 
