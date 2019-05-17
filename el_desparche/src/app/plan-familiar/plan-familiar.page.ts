@@ -4,6 +4,7 @@ import { ModalFamiliarPage } from '../modal-familiar/modal-familiar.page';
 import {FamiliaresService,Familiar} from '../services/familiares.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AlertController } from '@ionic/angular';
+//Importar el servicio 
 import{InvitacionesService} from '../services/invitaciones.service'
 import { Router } from '@angular/router';
 
