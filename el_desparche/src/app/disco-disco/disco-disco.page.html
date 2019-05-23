@@ -18,7 +18,7 @@
         <ion-card>
             <ion-img src="/assets/img1/Disco6.jpg" routerLink="/discotecas"></ion-img>
             <ion-card-header>
-              <ion-card-title routerLink="/discotecas">Crosover</ion-card-title>
+              <ion-card-title routerLink="/discotecas" *ngFor="let Disco">Crosover</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-col>
@@ -50,7 +50,7 @@
         </ion-card>
       </ion-col>
     </ion-row>
-  
+   
     <ion-row class="IntroAlmacen">
       <ion-col size="6">
         <ion-card>
