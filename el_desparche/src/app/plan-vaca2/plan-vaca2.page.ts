@@ -22,8 +22,7 @@ export class PlanVaca2Page implements OnInit {
     public toastController: ToastController,public afAuth: AngularFireAuth,private router: Router) { }
 
   ngOnInit() {
-    console.log(this.invitacionVacaService.listadoInvitados);
-    console.log(this.invitacionVacaService.valorVaca);
+    
   }
 
   finalizarInvitacion(){
