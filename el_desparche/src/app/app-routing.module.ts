@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'cafe-ybar', loadChildren: './cafe-ybar/cafe-ybar.module#CafeYbarPageModule' },
   { path: 'cafebar', loadChildren: './cafebar/cafebar.module#CafebarPageModule' },
   { path: 'discotecas', loadChildren: './discotecas/discotecas.module#DiscotecasPageModule' },  { path: 'plan-familiar2', loadChildren: './plan-familiar2/plan-familiar2.module#PlanFamiliar2PageModule' },
-  { path: 'invitaciones-familiares', loadChildren: './invitaciones-familiares/invitaciones-familiares.module#InvitacionesFamiliaresPageModule' }
+  { path: 'invitaciones-familiares', loadChildren: './invitaciones-familiares/invitaciones-familiares.module#InvitacionesFamiliaresPageModule' },
+  { path: 'plan-vaca2', loadChildren: './plan-vaca2/plan-vaca2.module#PlanVaca2PageModule' }
 
 
 

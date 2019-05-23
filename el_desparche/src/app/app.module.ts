@@ -27,6 +27,7 @@ import { environment } from 'src/environments/environment';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInOptions: [

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 import { Platform,MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -19,6 +20,7 @@ export class AppComponent {
     public afAuth: AngularFireAuth,
     private router: Router,
     private menuCtrl: MenuController,
+    public toastController: ToastController
   ) {
     this.initializeApp();
   }
@@ -33,7 +35,7 @@ export class AppComponent {
       url: '/nav/tabs/tab2',
       icon: 'md-calendar'
     },{
-      title: 'Invitaciones a familiares',
+      title: 'Mis invitaciones',
       url: '/invitaciones-familiares',
       icon: 'mail'
     },
@@ -74,6 +76,18 @@ export class AppComponent {
         });
       }
     });
+
+let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+                  this.toastSinInternet});
+  }
+
+  async toastSinInternet() {
+    const toast = await this.toastController.create({
+      message: 'Sin conexión a internet, por favor verifica tu conexión.',
+      duration: 2000,
+      color:'danger'
+    });
+    toast.present();
   }
 
 

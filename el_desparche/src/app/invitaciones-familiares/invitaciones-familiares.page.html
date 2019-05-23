@@ -26,4 +26,25 @@
         </ion-item>
  
       </ion-list>
+      <h3>Tus invitaciones a amigos</h3>
+      <ion-list>
+        <ion-item *ngFor="let invitacion of invitacionesAmigos; let identificador=index">
+          <ion-label>
+              <h4>Lugar: {{ invitacion.local | uppercase}}</h4>
+              <p>Valor de la vaca:{{invitacion.valorVaca}}</p>
+
+              <p>Invitados:</p>
+
+              <p *ngFor="let invitado of invitacion.invitados;">{{invitado}}</p>
+              
+          </ion-label>
+          <ion-button  slot="end" (click)="cancelarInvitacionAmigo(invitacion.id)">
+
+              <ion-icon slot="icon-only"  name="close"></ion-icon>
+            </ion-button>
+          
+    
+        </ion-item>
+ 
+      </ion-list>
 </ion-content>
