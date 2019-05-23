@@ -6,6 +6,12 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router,RouterEvent, NavigationEnd  } from '@angular/router';
+import { Network } from '@ionic-native/network/ngx';
+import {Dialogs} from '@ionic-native/dialogs/ngx';
+
+
+
+
 
 
 @Component({
@@ -13,6 +19,9 @@ import { Router,RouterEvent, NavigationEnd  } from '@angular/router';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+
+  public isConnected:boolean;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -20,9 +29,20 @@ export class AppComponent {
     public afAuth: AngularFireAuth,
     private router: Router,
     private menuCtrl: MenuController,
-    public toastController: ToastController
+    public toastController: ToastController,
+    public network:Network,
+    public dialog:Dialogs
   ) {
     this.initializeApp();
+
+    this.network.onDisconnect().subscribe(() =>{
+           this.toastSinInternet();
+    });
+    this.network.onConnect().subscribe(() =>{
+       setTimeout(()=>{
+           this.toastConInternet();
+      },2000);
+    });
   }
 
   pages = [
@@ -58,6 +78,10 @@ export class AppComponent {
   }
 
   ngOnInit() {
+
+
+
+
     this.afAuth.authState.subscribe(user => {
       if (!user) {
         if(this.router.url != '/'        )
@@ -77,18 +101,27 @@ export class AppComponent {
       }
     });
 
-let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
-                  this.toastSinInternet});
   }
 
   async toastSinInternet() {
     const toast = await this.toastController.create({
-      message: 'Sin conexión a internet, por favor verifica tu conexión.',
-      duration: 2000,
+      message: 'Sin conexión a internet, por favor verifica tu conexión, algunas opciones no funcionarán de forma correcta.',
+      duration: 3000,
       color:'danger'
     });
     toast.present();
   }
+
+  async toastConInternet() {
+    const toast = await this.toastController.create({
+      message: 'Otra vez te encuentras en línea.',
+      duration: 3000,
+      color:'success'
+    });
+    toast.present();
+  }
+
+
 
 
 }

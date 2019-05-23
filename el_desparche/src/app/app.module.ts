@@ -26,6 +26,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { Network } from '@ionic-native/network/ngx';
+import {Dialogs} from '@ionic-native/dialogs/ngx';
+
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -54,6 +57,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     UserServiceService,
     SplashScreen,
     Geolocation,
+    Network,
+    Dialogs,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
